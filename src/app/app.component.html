@@ -1,0 +1,56 @@
+<app-blackhole />
+<div class="ring" [style.transform]="'translate(' + ring().x + 'px,' + ring().y + 'px)'" aria-hidden="true"></div>
+
+<button class="sound" type="button" (click)="toggleSound()" [attr.aria-pressed]="soundOn()">
+  {{ soundOn() ? 'Silence the void' : 'Hear the void' }}
+</button>
+
+<main>
+  <header class="hero">
+    <h1>Give me a laptop and a task.<br>I make things happen.</h1>
+    <p class="who">{{ p.name }}, {{ p.role }}</p>
+    <ul class="badges">
+      @for (b of badges; track b) { <li>{{ b }}</li> }
+    </ul>
+    <p class="sum">{{ p.intro }}</p>
+  </header>
+
+  <section id="owns">
+    <h2>What I own</h2>
+    <div class="owns">
+      @for (o of owns; track o.title) {
+        <div class="own">
+          <h3>{{ o.title }}</h3>
+          <p>{{ o.text }}</p>
+        </div>
+      }
+    </div>
+  </section>
+
+  <section id="timeline">
+    <h2>Where I have done it</h2>
+    @for (t of timeline; track t.project) {
+      <div class="tl">
+        <span class="when">{{ t.years }}</span>
+        <span>{{ t.line }}</span>
+        <span class="proj">{{ t.project }}</span>
+      </div>
+    }
+  </section>
+
+  <section id="instruments">
+    <h2>Instruments</h2>
+    <p class="hint">Drag the sphere. Everything here is something I have used on a live system.</p>
+    <app-skill-orbit [skills]="skills" />
+  </section>
+
+  <section id="transmit">
+    <h2>Open a channel</h2>
+    <nav class="links">
+      <a [href]="'tel:+91' + p.phone">Call {{ p.phone }}</a>
+      <a [href]="p.whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+      <a [href]="'mailto:' + p.email">{{ p.email }}</a>
+      <a [href]="p.linkedin" target="_blank" rel="noopener">LinkedIn</a>
+    </nav>
+  </section>
+</main>
