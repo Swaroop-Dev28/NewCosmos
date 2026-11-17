@@ -1,6 +1,6 @@
-# Cosmos Portfolio
+# NewCosmos
 
-An interactive portfolio built with Angular, featuring an animated black hole background and a draggable skills orbit.
+Cosmos Portfolio: an interactive Angular site featuring an animated black hole background and a draggable skills orbit.
 
 ## Live site
 
