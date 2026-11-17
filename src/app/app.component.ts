@@ -12,6 +12,7 @@ import { BADGES, OWNS, PROFILE, SKILLS, TIMELINE } from './resume.data';
 })
 export class AppComponent {
   p = PROFILE; badges = BADGES; owns = OWNS; timeline = TIMELINE; skills = SKILLS;
+  emailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(PROFILE.email)}`;
   soundOn = signal(false);
   ring = signal({ x: -100, y: -100 });
   private target = { x: -100, y: -100 };

@@ -49,7 +49,7 @@
     <nav class="links">
       <a [href]="'tel:+91' + p.phone">Call {{ p.phone }}</a>
       <a [href]="p.whatsapp" target="_blank" rel="noopener">WhatsApp</a>
-      <a [href]="'mailto:' + p.email">{{ p.email }}</a>
+      <a [href]="emailComposeUrl" target="_blank" rel="noopener">{{ p.email }}</a>
       <a [href]="p.linkedin" target="_blank" rel="noopener">LinkedIn</a>
     </nav>
   </section>
